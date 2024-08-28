@@ -32,23 +32,34 @@ const ThemeSwitcher = () => {
       <DropdownMenuTrigger asChild>
         <Button variant="ghost" size={"sm"}>
           {theme === "light" ? (
-            <Sun
-              key="light"
-              size={ICON_SIZE}
-              className={"text-muted-foreground"}
-            />
+            <div className="flex gap-2 items-center">
+              <span>Light </span>
+              <Sun
+                key="light"
+                size={ICON_SIZE}
+                className={"text-muted-foreground"}
+              />
+            </div>
           ) : theme === "dark" ? (
-            <Moon
-              key="dark"
-              size={ICON_SIZE}
-              className={"text-muted-foreground"}
-            />
-          ) : (
-            <Laptop
-              key="system"
-              size={ICON_SIZE}
-              className={"text-muted-foreground"}
-            />
+            <div className="flex gap-2 items-center">
+              <span>Dark </span>
+              <Moon
+                key="dark"
+                size={ICON_SIZE}
+                className={"text-muted-foreground"}
+              />
+            </div>
+
+          )  : (
+            <div className="flex gap-2 items-center">
+              <span>System </span>
+              <Laptop
+                key="system"
+                size={ICON_SIZE}
+                className={"text-muted-foreground"}
+              />
+            </div>
+
           )}
         </Button>
       </DropdownMenuTrigger>
@@ -65,10 +76,10 @@ const ThemeSwitcher = () => {
             <Moon size={ICON_SIZE} className="text-muted-foreground" />{" "}
             <span>Dark</span>
           </DropdownMenuRadioItem>
-          <DropdownMenuRadioItem className="flex gap-2" value="system">
+          {/* <DropdownMenuRadioItem className="flex gap-2" value="system">
             <Laptop size={ICON_SIZE} className="text-muted-foreground" />{" "}
             <span>System</span>
-          </DropdownMenuRadioItem>
+          </DropdownMenuRadioItem> */}
         </DropdownMenuRadioGroup>
       </DropdownMenuContent>
     </DropdownMenu>
